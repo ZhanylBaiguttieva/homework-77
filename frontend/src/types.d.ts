@@ -6,7 +6,7 @@ export interface Message {
 }
 
 export interface MessageMutation {
-  author: string,
+  author: string | null;
   title: string;
   image: File | null;
 }

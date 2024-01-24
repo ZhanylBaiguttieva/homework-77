@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardMedia, Grid, styled} from '@mui/material';
 import {apiURL} from '../constants.ts';
-import imageNotAvailable from '../assets/images/no-image-available.png';
 
 const ImageCardMedia = styled(CardMedia) ({
   height: 0,
@@ -15,21 +14,17 @@ interface Props {
 }
 
 const MessageItem: React.FC<Props> = ({author,title, image}) => {
-
-  let cardImage = imageNotAvailable;
-
-  if(image){
-    cardImage = apiURL + '/' + image;
-  }
+  const cardAuthor = author || 'Anonymous';
+  const cardImage = apiURL + '/' + image || '';
 
   return (
-    <Grid item xs={12} sm={12} md={6} lg={2}>
-      <Card>
-        <CardHeader title={author} />
+    <Grid item xs={6} sm={4} md={3}>
+      <Card sx={{height: '100%'}}>
+        <ImageCardMedia image={cardImage} title={title} />
+        <CardHeader title={cardAuthor} />
         <CardContent>
           <strong>
-          <ImageCardMedia image={cardImage} title={title} />
-              Message is: {title}
+              posted: "{title}"
           </strong>
         </CardContent>
       </Card>
