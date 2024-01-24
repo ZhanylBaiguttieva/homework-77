@@ -3,7 +3,10 @@ import { Button, Grid, TextField } from '@mui/material';
 import {MessageMutation} from '../../types';
 import FileInput from '../FileInput.tsx';
 
-const MessageForm = () => {
+interface Props {
+  onSubmit: (mutation: MessageMutation) => void;
+}
+const MessageForm: React.FC<Props> = ({onSubmit}) => {
   const [state, setState] = useState<MessageMutation>({
     author: '',
     title: '',
@@ -12,6 +15,7 @@ const MessageForm = () => {
 
   const submitFormHandler = (e: React.FormEvent) => {
     e.preventDefault();
+    onSubmit(state);
   };
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
