@@ -51,6 +51,7 @@ const MessageForm = () => {
             value={state.title}
             onChange={inputChangeHandler}
             name="title"
+            required
           />
         </Grid>
         <Grid item xs>
