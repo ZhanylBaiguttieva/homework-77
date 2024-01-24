@@ -14,7 +14,7 @@ const Messages = () => {
     dispatch(fetchMessages());
   }, [dispatch]);
   return (
-    <Grid item container direction="row" spacing={1}>
+    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
       {messages.map(message => (
         <MessageItem
           key={message.id}

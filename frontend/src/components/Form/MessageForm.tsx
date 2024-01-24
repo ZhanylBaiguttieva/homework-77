@@ -41,7 +41,7 @@ const MessageForm: React.FC<Props> = ({onSubmit}) => {
       onSubmit={submitFormHandler}
     >
       <Grid container direction="column" spacing={2}>
-        <Grid item xs>
+        <Grid item >
           <TextField
             id="author" label="Author"
             value={state.author}
@@ -49,7 +49,7 @@ const MessageForm: React.FC<Props> = ({onSubmit}) => {
             name="author"
           />
         </Grid>
-        <Grid item xs>
+        <Grid item >
           <TextField
             id="title" label="Title"
             value={state.title}
@@ -58,14 +58,14 @@ const MessageForm: React.FC<Props> = ({onSubmit}) => {
             required
           />
         </Grid>
-        <Grid item xs>
+        <Grid item >
           <FileInput
             label="Image"
             name="image"
             onChange={fileInputChangeHandler}
           />
         </Grid>
-        <Grid item xs>
+        <Grid item >
           <Button type="submit" color="primary" variant="contained">Create</Button>
         </Grid>
       </Grid>
