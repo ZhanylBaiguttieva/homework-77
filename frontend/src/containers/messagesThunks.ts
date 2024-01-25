@@ -3,7 +3,7 @@ import axiosApi from '../axiosApi.ts';
 import {Message, MessageMutation} from '../types';
 
 export const fetchMessages = createAsyncThunk(
-  'contacts/fetchAll',
+  'messages/fetchAll',
   async () => {
     const messagesResponse = await axiosApi.get<Message[] | null>('/messages');
     const messages =  messagesResponse.data;
