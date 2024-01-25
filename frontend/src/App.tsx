@@ -3,7 +3,7 @@ import Messages from './components/Messages.tsx';
 import {Grid, Typography} from '@mui/material';
 import {useAppDispatch} from "./app/hooks.ts";
 import {MessageMutation} from "./types";
-import {createMessage} from "./containers/messagesThunks.ts";
+import {createMessage, fetchMessages} from './containers/messagesThunks.ts';
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
 
   const onFormSubmit = async (messageMutation: MessageMutation) => {
     await dispatch(createMessage(messageMutation));
+    await dispatch(fetchMessages());
   };
 
   return (
