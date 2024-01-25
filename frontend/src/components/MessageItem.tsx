@@ -9,13 +9,13 @@ const ImageCardMedia = styled(CardMedia) ({
 
 interface Props {
   author: string | null;
-  title: string
+  title: string;
   image: string | null;
 }
 
-const MessageItem: React.FC<Props> = ({author,title, image}) => {
+const MessageItem: React.FC<Props> = ({ author,title, image}) => {
   const cardAuthor = author || 'Anonymous';
-  const cardImage = apiURL + '/' + image || '';
+  const cardImage = apiURL + '/' + image || undefined;
 
   return (
     <Grid item xs={6} sm={4} md={3}>
